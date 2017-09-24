@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
-    public float speed = 10.0f;
+    public float force = 10.0f;
+    public float maxSpeed = 20.0f;
 
     // For Movement
     private float forward;
@@ -51,11 +52,16 @@ void FixedUpdate()
         forward = Input.GetAxis("Vertical");
         right = Input.GetAxis("Horizontal");
 
-        forceVector.x = right*speed;
+        forceVector.x = right * force;
         forceVector.y = 0.0f;
-        forceVector.z = forward*speed;
+        forceVector.z = forward * force;
         rb.AddRelativeForce(forceVector);
 
+        Debug.Log(rb.velocity.magnitude);
+        if (rb.velocity.sqrMagnitude > Mathf.Pow(maxSpeed,2))
+        {
+            rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
+        }
     }
 
     void mouseLook()
