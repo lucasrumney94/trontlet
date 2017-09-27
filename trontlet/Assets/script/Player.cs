@@ -23,7 +23,6 @@ public class Player : MonoBehaviour {
     private float rotY;
 
 
-
     // Use this for initialization
     void Start ()
     {
@@ -31,6 +30,7 @@ public class Player : MonoBehaviour {
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
     }
 	
 	// Update is called once per frame
@@ -57,7 +57,7 @@ void FixedUpdate()
         forceVector.z = forward * force;
         rb.AddRelativeForce(forceVector);
 
-        Debug.Log(rb.velocity.magnitude);
+        // Debug.Log(rb.velocity.magnitude);
         if (rb.velocity.sqrMagnitude > Mathf.Pow(maxSpeed,2))
         {
             rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
