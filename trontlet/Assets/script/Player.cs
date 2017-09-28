@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
+    public int guncoins = 10; 
+
     public float force = 10.0f;
     public float maxSpeed = 20.0f;
     public float translateSpeed = 1.0f;
@@ -45,13 +47,22 @@ public class Player : MonoBehaviour {
 		
 	}
 
-void FixedUpdate()
+    void FixedUpdate()
     {
         translationalMovement();
         mouseLook();
         cursorLockState();
     }
 
+    void OnCollisionEnter(Collision other)
+    {
+        if(other.transform.tag == "guncoin")
+        {
+            Destroy(other.gameObject);
+            guncoins++;
+            //trigger coin sound
+        }
+    }
 
     void rigidBodyMovement()
     {
