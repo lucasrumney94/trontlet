@@ -57,8 +57,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1691170265503280}
-  m_LocalRotation: {x: -0.06084548, y: 0.9239003, z: -0.16555554, w: -0.3395548}
-  m_LocalPosition: {x: 9.29069, y: 8.3288555, z: 8.54651}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.027205467, y: 6.02829, z: 0.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4789769555928406}
@@ -72,7 +72,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1677212240036374}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.11}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4717245209116782}
@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  profile: {fileID: 0}
+  profile: {fileID: 11400000, guid: 0213396603e7d0f4ea29bd8bf5feec7f, type: 2}
 --- !u!114 &114648161534900112
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -207,6 +207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   force: 10
   maxSpeed: 20
+  translateSpeed: 12
   myCamera: {fileID: 20190997436827950}
   mouseSensitivity: 80
   mouseClampAngle: 80
@@ -223,7 +224,7 @@ CapsuleCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1691170265503280}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 80a0735e34946c44ea7a7c6a1ffa2ec2, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
