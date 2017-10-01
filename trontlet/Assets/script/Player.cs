@@ -63,6 +63,15 @@ public class Player : MonoBehaviour {
             //trigger coin sound
         }
     }
+    void OnCollisionStay(Collision other)
+    {
+        if(other.transform.tag == "guncoin")
+        {
+            Destroy(other.gameObject);
+            guncoins++;
+            //trigger coin sound
+        }
+    }
 
     void rigidBodyMovement()
     {

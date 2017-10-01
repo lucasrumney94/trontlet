@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.0039047687, b: 0.5661765, a: 1}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -450,6 +450,26 @@ Prefab:
     - target: {fileID: 4717245209116782, guid: 0a1e687795c65814f8c723baec5c1d92, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114032546745152122, guid: 0a1e687795c65814f8c723baec5c1d92,
+        type: 2}
+      propertyPath: recoilForce
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114648161534900112, guid: 0a1e687795c65814f8c723baec5c1d92,
+        type: 2}
+      propertyPath: maxSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114648161534900112, guid: 0a1e687795c65814f8c723baec5c1d92,
+        type: 2}
+      propertyPath: force
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114648161534900112, guid: 0a1e687795c65814f8c723baec5c1d92,
+        type: 2}
+      propertyPath: translateSpeed
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0a1e687795c65814f8c723baec5c1d92, type: 2}

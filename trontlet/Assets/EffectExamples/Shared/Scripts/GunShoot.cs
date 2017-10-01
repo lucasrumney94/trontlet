@@ -22,6 +22,7 @@ public class GunShoot : MonoBehaviour {
 	private float nextFire;												// Float to store the time the player will be allowed to fire again, after firing
 	private Animator anim;
 	private GunAim gunAim;
+	
 
 	void Start () 
 	{
