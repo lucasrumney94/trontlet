@@ -33,7 +33,7 @@ public class gun : MonoBehaviour {
 			bullet=Instantiate(firingGuncoinPrefab, gunEnd.position, gunEnd.rotation) as GameObject;
 			bullet.GetComponent<Rigidbody>().AddForce(transform.forward*bulletForce,ForceMode.Impulse);
 			
-			playerRb.AddForce(-gunEnd.forward*recoilForce,ForceMode.Impulse);
+			//playerRb.AddForce(-gunEnd.forward*recoilForce,ForceMode.Impulse);
 		}
 	}
 }
