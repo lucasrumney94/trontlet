@@ -53,7 +53,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CellPrefab: {fileID: 1874557853658066, guid: 8f810b77a0b908449a41c39cedf7f506, type: 2}
   RoomPrefab: {fileID: 1092936891603688, guid: 1023d6d59a40e204db0f1be7c10b8ac8, type: 2}
+  MazeExitPrefab: {fileID: 1280968487569908, guid: b9f54747d8b08dc4696157055016756e,
+    type: 2}
   Level: 1
-  width: 10
+  width: 20
   length: 10
-  numberOfRooms: 3
+  numberOfRooms: 5

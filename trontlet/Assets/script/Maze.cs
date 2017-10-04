@@ -6,6 +6,7 @@ public class Maze : MonoBehaviour {
 
 	public GameObject CellPrefab;
 	public GameObject RoomPrefab;
+	public GameObject MazeExitPrefab;
 	public int Level;
 	public int width;
 	public int length;
@@ -100,12 +101,22 @@ public class Maze : MonoBehaviour {
 		}
 
 
-		//Now Generate the Rooms by deleting walls
+		// Now Generate the Rooms by deleting walls
 		for (int k = 0; k<numberOfRooms; k++)
 		{
-			GameObject tempRoom = Instantiate(RoomPrefab, new Vector3(Random.Range(0.0f,Cells[width-1,length-1].transform.position.x), 0.0f, Random.Range(0.0f,Cells[width-1,length-1].transform.position.z)), Quaternion.identity) as GameObject;
+			int roomMargin = (int)RoomPrefab.transform.localScale.x/(int)CellPrefab.transform.localScale.x;
+			roomMargin += 1;
+			Cell roomCenterCell = Cells[Random.Range(roomMargin,width-roomMargin),Random.Range(roomMargin,length-roomMargin)];
+			GameObject tempRoom = Instantiate(RoomPrefab, roomCenterCell.transform.position, Quaternion.identity) as GameObject;
 			tempRoom.transform.parent = transform;
 		}
+
+		// Now Choose an Exit Cell and Remove the Floor
+		Cell exitCell = Cells[width-Random.Range(2,7),length-Random.Range(2,7)];
+		GameObject myExitPlilar = Instantiate(MazeExitPrefab,exitCell.gameObject.transform.position,Quaternion.identity) as GameObject;
+		//myExitPlilar.transform.parent = transform;
+		GameObject.Destroy(exitCell.gameObject);
+
 
 		// Now Close up the boundary
 
@@ -125,9 +136,9 @@ public class Maze : MonoBehaviour {
 		
 		// find valid neighbors
 		// check North
-		if (currentCell.zCoord < width-1)
+		if (currentCell.zCoord < length-1)
 		{
-			if (Cells[currentCell.xCoord,currentCell.zCoord+1].visited == false)
+			if (Cells[currentCell.xCoord, currentCell.zCoord+1].visited == false)
 			{
 				validCells.Add(Cells[currentCell.xCoord,currentCell.zCoord+1]);
 			}
@@ -143,7 +154,7 @@ public class Maze : MonoBehaviour {
 		}
 		
 		//check East
-		if (currentCell.xCoord < length-1)
+		if (currentCell.xCoord < width-1)
 		{
 			if (Cells[currentCell.xCoord+1,currentCell.zCoord].visited == false)
 			{
@@ -161,7 +172,7 @@ public class Maze : MonoBehaviour {
 		}
 		
 		// return a random valid neighbor if there is one
-		if (validCells.Count >0)
+		if (validCells.Count > 0)
 		{
 			Cell nextCell = validCells[Random.Range(0,validCells.Count)];
 			return nextCell;

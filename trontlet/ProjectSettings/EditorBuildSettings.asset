@@ -6,5 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/scene/feature-guncoin.unity
-    guid: 94ce39cd482690c4c897355c09d51e0d
+    path: Assets/scene/level/Level1.unity
+    guid: 521619d0058929e4db0f69c909206cf8
+  - enabled: 1
+    path: Assets/scene/level/Level2.unity
+    guid: 0650f095f44979142860df796813cfc7
+  - enabled: 1
+    path: Assets/scene/level/Level3.unity
+    guid: 7fb68c1daa335d746ac4736a91fa9f33

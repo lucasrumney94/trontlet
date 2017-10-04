@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: 23044577728871088}
   - component: {fileID: 114977800140748206}
   m_Layer: 0
-  m_Name: Cell
+  m_Name: Cell 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -748,7 +748,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 2
-  m_Color: {r: 0, g: 0.44852942, b: 0.077332675, a: 1}
+  m_Color: {r: 0.06293254, g: 0.20196274, b: 0.71323526, a: 1}
   m_Intensity: 26.1
   m_Range: 5.01
   m_SpotAngle: 30
