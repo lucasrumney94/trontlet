@@ -100,19 +100,20 @@ public class Maze : MonoBehaviour {
 			}
 		}
 
-
+		int roomMargin = (int)RoomPrefab.transform.localScale.x/(int)CellPrefab.transform.localScale.x;
+		roomMargin += 1;
 		// Now Generate the Rooms by deleting walls
 		for (int k = 0; k<numberOfRooms; k++)
 		{
-			int roomMargin = (int)RoomPrefab.transform.localScale.x/(int)CellPrefab.transform.localScale.x;
-			roomMargin += 1;
+			
+			
 			Cell roomCenterCell = Cells[Random.Range(roomMargin,width-roomMargin),Random.Range(roomMargin,length-roomMargin)];
 			GameObject tempRoom = Instantiate(RoomPrefab, roomCenterCell.transform.position, Quaternion.identity) as GameObject;
 			tempRoom.transform.parent = transform;
 		}
 
 		// Now Choose an Exit Cell and Remove the Floor
-		Cell exitCell = Cells[width-Random.Range(2,7),length-Random.Range(2,7)];
+		Cell exitCell = Cells[width-Random.Range(roomMargin,roomMargin+3),length-Random.Range(roomMargin,roomMargin+3)];
 		GameObject myExitPlilar = Instantiate(MazeExitPrefab,exitCell.gameObject.transform.position,Quaternion.identity) as GameObject;
 		//myExitPlilar.transform.parent = transform;
 		GameObject.Destroy(exitCell.gameObject);

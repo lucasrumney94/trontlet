@@ -299,6 +299,11 @@ Prefab:
       propertyPath: length
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 114021723060734088, guid: f7a7ecab968c6f0489fb317e251feb0a,
+        type: 2}
+      propertyPath: numberOfRooms
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f7a7ecab968c6f0489fb317e251feb0a, type: 2}
   m_IsPrefabParent: 0
@@ -402,7 +407,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &690109674
 AudioListener:
   m_ObjectHideFlags: 0
@@ -510,6 +515,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4717245209116782, guid: 0a1e687795c65814f8c723baec5c1d92, type: 2}
       propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1691170265503280, guid: 0a1e687795c65814f8c723baec5c1d92, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -5,17 +5,15 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
     public int guncoins = 10; 
-
-    public float force = 10.0f;
-    public float maxSpeed = 20.0f;
-    public float translateSpeed = 1.0f;
+    public float speed = 1.0f;
+    public float gravity = 9.8f;
 
     // For Movement
+    private CharacterController controller;
     private float forward;
     private float right;
-    private Rigidbody rb;
-    private Vector3 forceVector;
     private Vector3 translateVector;
+    private Vector3 moveDirection;
 
     // For MouseLook
     public Camera myCamera;
@@ -34,22 +32,20 @@ public class Player : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        rb = GetComponent<Rigidbody>();
-
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         originalRotation = transform.localRotation;
+        controller = GetComponent<CharacterController>();
     }
 	
-	// Update is called once per frame
-	void Update ()
-    {
-		
-	}
-
     void FixedUpdate()
     {
-        translationalMovement();
+        //translationalMovement();
+    }
+
+    void Update()
+    {
+        controllerMovement();
         mouseLook();
         cursorLockState();
     }
@@ -73,24 +69,8 @@ public class Player : MonoBehaviour {
         }
     }
 
-    void rigidBodyMovement()
-    {
-        forward = Input.GetAxis("Vertical");
-        right = Input.GetAxis("Horizontal");
 
-        forceVector.x = right * force;
-        forceVector.y = 0.0f;
-        forceVector.z = forward * force;
-        rb.AddRelativeForce(forceVector);
-
-        // Debug.Log(rb.velocity.magnitude);
-        if (rb.velocity.sqrMagnitude > Mathf.Pow(maxSpeed,2))
-        {
-            rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
-        }
-    }
-
-    void translationalMovement()
+/*     void translationalMovement()
     {
         forward = Input.GetAxis("Vertical");
         right = Input.GetAxis("Horizontal");
@@ -100,15 +80,28 @@ public class Player : MonoBehaviour {
 
         transform.Translate(translateVector);
 
+    } */
+
+    void controllerMovement()
+    {
+        if (controller.isGrounded) 
+        {
+            moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+            moveDirection = transform.TransformDirection(moveDirection);
+            moveDirection *= speed;            
+        }
+        moveDirection.y -= gravity * Time.deltaTime;
+        controller.Move(moveDirection * Time.deltaTime);
     }
+
 
     void mouseLook()
     {
         mouseX = Input.GetAxis("Mouse X");
         mouseY = -Input.GetAxis("Mouse Y");
 
-        rotY += mouseX * mouseSensitivity * Time.deltaTime;
-        rotX += mouseY * mouseSensitivity * Time.deltaTime;
+        rotY += mouseX * mouseSensitivity;
+        rotX += mouseY * mouseSensitivity;
 
         transform.rotation = originalRotation*Quaternion.Euler(0.0f, rotY, 0.0f);
 
