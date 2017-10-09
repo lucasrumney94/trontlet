@@ -95,15 +95,15 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
+    agentRadius: 0.3
     agentHeight: 2
-    agentSlope: 45
-    agentClimb: 0.4
+    agentSlope: 5.3
+    agentClimb: 0.1
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.1
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -289,21 +289,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114021723060734088, guid: f7a7ecab968c6f0489fb317e251feb0a,
-        type: 2}
-      propertyPath: width
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114021723060734088, guid: f7a7ecab968c6f0489fb317e251feb0a,
-        type: 2}
-      propertyPath: length
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 114021723060734088, guid: f7a7ecab968c6f0489fb317e251feb0a,
-        type: 2}
-      propertyPath: numberOfRooms
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f7a7ecab968c6f0489fb317e251feb0a, type: 2}
   m_IsPrefabParent: 0
@@ -407,7 +392,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &690109674
 AudioListener:
   m_ObjectHideFlags: 0
@@ -519,7 +504,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1691170265503280, guid: 0a1e687795c65814f8c723baec5c1d92, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0a1e687795c65814f8c723baec5c1d92, type: 2}

@@ -161,8 +161,13 @@ Prefab:
         type: 2}
       propertyPath: CellPrefab
       value: 
-      objectReference: {fileID: 1874557853658066, guid: 2468853a76768e34b88d5b8584b27347,
+      objectReference: {fileID: 1874557853658066, guid: 8f810b77a0b908449a41c39cedf7f506,
         type: 2}
+    - target: {fileID: 114021723060734088, guid: f7a7ecab968c6f0489fb317e251feb0a,
+        type: 2}
+      propertyPath: numberOfRooms
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f7a7ecab968c6f0489fb317e251feb0a, type: 2}
   m_IsPrefabParent: 0

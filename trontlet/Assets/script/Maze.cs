@@ -114,7 +114,7 @@ public class Maze : MonoBehaviour {
 
 		// Now Choose an Exit Cell and Remove the Floor
 		Cell exitCell = Cells[width-Random.Range(roomMargin,roomMargin+3),length-Random.Range(roomMargin,roomMargin+3)];
-		GameObject myExitPlilar = Instantiate(MazeExitPrefab,exitCell.gameObject.transform.position,Quaternion.identity) as GameObject;
+		GameObject myExitPillar = Instantiate(MazeExitPrefab,exitCell.gameObject.transform.position,Quaternion.identity) as GameObject;
 		//myExitPlilar.transform.parent = transform;
 		GameObject.Destroy(exitCell.gameObject);
 
