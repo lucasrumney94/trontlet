@@ -28,7 +28,6 @@ public class navSwarmToPlayer : MonoBehaviour
 
 	void setActive()
 	{
-
 		enemyActive = true;
 	}
 }

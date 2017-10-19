@@ -37,9 +37,9 @@ GameObject:
   - component: {fileID: 4953773938818352}
   - component: {fileID: 33678745805866032}
   - component: {fileID: 23205288895584488}
-  - component: {fileID: 135014300567413150}
   - component: {fileID: 54715177005797904}
   - component: {fileID: 114902912336863136}
+  - component: {fileID: 65412702697597784}
   m_Layer: 8
   m_Name: guncoinBullet
   m_TagString: Untagged
@@ -67,7 +67,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1913003981142184}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.4880002, z: 0}
+  m_LocalPosition: {x: 29.54913, y: 100.43912, z: -4.493237}
   m_LocalScale: {x: 0.25, y: 0.03125, z: 0.25}
   m_Children:
   - {fileID: 4950262809227214}
@@ -128,6 +128,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 48
   m_CollisionDetection: 0
+--- !u!65 &65412702697597784
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1913003981142184}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.75, y: 2, z: 0.75}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!108 &108093197798872418
 Light:
   m_ObjectHideFlags: 1
@@ -177,15 +189,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guncoinPrefab: {fileID: 1913003981142184, guid: 0942a215fbf3ab44e8f36cf4bdb52784,
     type: 2}
---- !u!135 &135014300567413150
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1913003981142184}
-  m_Material: {fileID: 13400000, guid: 69327975c902b5744a1bdb261b703745, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}

@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 23824634023589246}
   - component: {fileID: 195950953633271086}
   - component: {fileID: 114338821540528956}
+  - component: {fileID: 114324754482198002}
   m_Layer: 0
   m_Name: TestEnemy
   m_TagString: Untagged
@@ -149,6 +150,17 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114324754482198002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1441042871074882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35ad810de6afe8a42865691c3c875627, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114338821540528956
 MonoBehaviour:
   m_ObjectHideFlags: 1

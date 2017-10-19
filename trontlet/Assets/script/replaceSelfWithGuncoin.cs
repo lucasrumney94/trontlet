@@ -16,20 +16,20 @@ public class replaceSelfWithGuncoin : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+
 	}
 	void OnCollisionEnter(Collision other)
 	{
 
 		if (hitFlag == false)
 		{
-			if (!other.transform.tag.Equals("Player") && !other.transform.tag.Equals("guncoin"))
+			if (!other.transform.tag.Equals("Player") && !other.transform.tag.Equals("guncoin") || other.transform.tag.Equals("Enemy"))
 			{
 				Instantiate(guncoinPrefab,other.contacts[0].point, Quaternion.Euler(90,0,0));
 				Destroy(gameObject);
-
+				other.gameObject.SendMessage("ApplyDamage", SendMessageOptions.DontRequireReceiver);
 				hitFlag = true;
 			}
-			
 		}
 		
 	}
