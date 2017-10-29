@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - guncoin
+  - Enemy
+  - BeholderProjectile
   layers:
   - Default
   - TransparentFX
@@ -17,7 +19,7 @@ TagManager:
   - bullet
   - guncoin
   - mazeExit
-  - 
+  - BeholderProjectile
   - 
   - 
   - 
