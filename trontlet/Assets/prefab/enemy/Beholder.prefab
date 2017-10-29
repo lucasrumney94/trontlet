@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33388549192186122}
   - component: {fileID: 135482072042822808}
   - component: {fileID: 23619836417542590}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: eye
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 195666529466427944}
   - component: {fileID: 114991490360983590}
   - component: {fileID: 114597869964845740}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Beholder
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -197,6 +197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyActive: 1
+  maxReactionTime: 0.3
 --- !u!135 &135482072042822808
 SphereCollider:
   m_ObjectHideFlags: 1

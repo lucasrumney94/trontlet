@@ -6,6 +6,8 @@ using UnityEngine.AI;
 public class navSwarmToPlayer : MonoBehaviour 
 {
 	public bool enemyActive = false;
+	[Range(0.1f,10.0f)]
+	public float maxReactionTime = 2.0f;
 
 	private GameObject player;
 	private NavMeshAgent agent;
@@ -16,9 +18,9 @@ public class navSwarmToPlayer : MonoBehaviour
 	{
 		agent = GetComponent<NavMeshAgent>();
 		player = GameObject.FindGameObjectWithTag("Player");
-		Invoke("setActive", 1);
+		//Invoke("setActive", 1);
 		StartCoroutine("NavigateToPlayer");
-		randomDuration = Random.Range(0.1f,3.0f);
+		randomDuration = Random.Range(0.1f,maxReactionTime);
 	}
 	
 	// Update is called once per frame
@@ -31,8 +33,10 @@ public class navSwarmToPlayer : MonoBehaviour
 	{
 		enemyActive = true;
 	}
+
 	IEnumerator NavigateToPlayer()
 	{
+		
 		for(;;)
 		{
 			if (enemyActive)

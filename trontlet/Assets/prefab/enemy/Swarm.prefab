@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 195950953633271086}
   - component: {fileID: 114338821540528956}
   - component: {fileID: 114324754482198002}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Swarm
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4576970318525340}
   - component: {fileID: 108927888671875934}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,6 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyActive: 0
+  maxReactionTime: 2
 --- !u!135 &135153333352415922
 SphereCollider:
   m_ObjectHideFlags: 1

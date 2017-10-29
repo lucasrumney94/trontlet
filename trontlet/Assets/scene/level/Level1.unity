@@ -145,7 +145,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4474574963948646, guid: 75be9716753013f4684ef0b167a04b4f, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 108474175314405710, guid: 75be9716753013f4684ef0b167a04b4f,
         type: 2}
@@ -287,22 +287,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4881665950194394, guid: f7a7ecab968c6f0489fb317e251feb0a, type: 2}
       propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114021723060734088, guid: f7a7ecab968c6f0489fb317e251feb0a,
-        type: 2}
-      propertyPath: width
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 114021723060734088, guid: f7a7ecab968c6f0489fb317e251feb0a,
-        type: 2}
-      propertyPath: length
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114021723060734088, guid: f7a7ecab968c6f0489fb317e251feb0a,
-        type: 2}
-      propertyPath: numberOfRooms
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f7a7ecab968c6f0489fb317e251feb0a, type: 2}
@@ -387,7 +372,7 @@ Transform:
   m_LocalScale: {x: 50, y: 0.5, z: 50}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &690109673
 GameObject:
@@ -476,7 +461,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &703513888
 Prefab:
@@ -516,10 +501,6 @@ Prefab:
     - target: {fileID: 4717245209116782, guid: 0a1e687795c65814f8c723baec5c1d92, type: 2}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1691170265503280, guid: 0a1e687795c65814f8c723baec5c1d92, type: 2}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0a1e687795c65814f8c723baec5c1d92, type: 2}
