@@ -39,7 +39,10 @@ public class spawnEnemy : MonoBehaviour {
 			{
 				foreach (GameObject enemy in Enemies)
 				{
-					enemy.GetComponent<navSwarmToPlayer>().enemyActive = true;
+					if (enemy!=null)
+					{
+						enemy.GetComponent<navSwarmToPlayer>().enemyActive = true;
+					}
 				}
 				triggerOnce = false;
 			}

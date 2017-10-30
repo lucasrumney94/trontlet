@@ -9,7 +9,7 @@ public class Beholder : MonoBehaviour {
 	public GameObject guncoinPrefab;
 	public GameObject beholderProjectilePrefab;
 
-
+	public bool isNavActive;
 	// Use this for initialization
 	void Start () 
 	{
@@ -19,7 +19,8 @@ public class Beholder : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		
+		isNavActive = GetComponent<navSwarmToPlayer>().enemyActive;
+		transform.LookAt(GameObject.FindGameObjectWithTag("Player").transform.position);
 	}
 
 	void ApplyDamage()
@@ -40,7 +41,10 @@ public class Beholder : MonoBehaviour {
 	{
 		for (;;)
 		{
-			Instantiate(beholderProjectilePrefab, transform.position, transform.rotation);
+			if (isNavActive)
+			{
+				Instantiate(beholderProjectilePrefab, transform.position, transform.rotation);
+			}
 			yield return new WaitForSeconds(shootDelay);
 		}
 	}

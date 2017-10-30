@@ -247,6 +247,60 @@ Prefab:
       propertyPath: m_Range
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 108406756621550508, guid: 75be9716753013f4684ef0b167a04b4f,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 4294950911
+      objectReference: {fileID: 0}
+    - target: {fileID: 108438844287235488, guid: 75be9716753013f4684ef0b167a04b4f,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 4294950911
+      objectReference: {fileID: 0}
+    - target: {fileID: 108039371999210628, guid: 75be9716753013f4684ef0b167a04b4f,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 4294950911
+      objectReference: {fileID: 0}
+    - target: {fileID: 108855277266623286, guid: 75be9716753013f4684ef0b167a04b4f,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 4294950911
+      objectReference: {fileID: 0}
+    - target: {fileID: 108455170451566122, guid: 75be9716753013f4684ef0b167a04b4f,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 4294950911
+      objectReference: {fileID: 0}
+    - target: {fileID: 108974396881029862, guid: 75be9716753013f4684ef0b167a04b4f,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 4294950911
+      objectReference: {fileID: 0}
+    - target: {fileID: 108474175314405710, guid: 75be9716753013f4684ef0b167a04b4f,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 4294950911
+      objectReference: {fileID: 0}
+    - target: {fileID: 108418286595391638, guid: 75be9716753013f4684ef0b167a04b4f,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 4294950911
+      objectReference: {fileID: 0}
+    - target: {fileID: 108856048447639768, guid: 75be9716753013f4684ef0b167a04b4f,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 4294950911
+      objectReference: {fileID: 0}
+    - target: {fileID: 108917788898713298, guid: 75be9716753013f4684ef0b167a04b4f,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 4294950911
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328371274692780, guid: 75be9716753013f4684ef0b167a04b4f, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 75be9716753013f4684ef0b167a04b4f, type: 2}
   m_IsPrefabParent: 0
@@ -543,6 +597,10 @@ Prefab:
     - target: {fileID: 4678525175926558, guid: 3c36f1bf865559d43a95de97f8bd7a68, type: 2}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1365795567798154, guid: 3c36f1bf865559d43a95de97f8bd7a68, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3c36f1bf865559d43a95de97f8bd7a68, type: 2}

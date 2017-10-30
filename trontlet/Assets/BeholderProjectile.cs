@@ -5,6 +5,7 @@ using UnityEngine;
 public class BeholderProjectile : MonoBehaviour {
 
 	public float bulletSpeed = 5.0f;
+	public float damage = 5.0f;
 
 	private Rigidbody rb;
 
@@ -25,11 +26,15 @@ public class BeholderProjectile : MonoBehaviour {
 		rb.AddRelativeForce(0.0f, 0.0f, bulletSpeed);
 	}
 
-	void OnCollisionEnter(Collision other)
+	void OnTriggerEnter(Collider other)
 	{
-		if (!other.gameObject.tag.Equals("Enemy"))
+		if (!other.gameObject.tag.Equals("Enemy") && !other.gameObject.tag.Equals("Room"))
 		{
 			Destroy(gameObject);
+		}
+		if (other.gameObject.tag.Equals("Player"))
+		{
+			other.gameObject.GetComponent<PlayerStats>().Health-=damage;
 		}
 	}
 }

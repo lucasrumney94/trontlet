@@ -19,10 +19,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4595940480804022}
-  - component: {fileID: 33986904270350730}
   m_Layer: 0
   m_Name: Room
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41,7 +40,7 @@ GameObject:
   - component: {fileID: 54956846293817194}
   m_Layer: 0
   m_Name: WallKiller
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56,9 +55,10 @@ GameObject:
   - component: {fileID: 4468702722433528}
   - component: {fileID: 135358489777327806}
   - component: {fileID: 114404070442256968}
+  - component: {fileID: 114169719081930728}
   m_Layer: 0
   m_Name: EnemyController
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,13 +111,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1494392106261884}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!33 &33986904270350730
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1092936891603688}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!54 &54956846293817194
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -144,6 +137,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d400fe52770e2834aaf34cf5b6748143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114169719081930728
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1859173113132266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a66561cc4ef5254faecd408362150db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 1365795567798154, guid: 3c36f1bf865559d43a95de97f8bd7a68,
+    type: 2}
+  number: 1
 --- !u!114 &114404070442256968
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -168,7 +175,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.1
+  m_Radius: 1.2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &135507277470992190
 SphereCollider:

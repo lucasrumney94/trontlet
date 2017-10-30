@@ -7,6 +7,7 @@ TagManager:
   - guncoin
   - Enemy
   - BeholderProjectile
+  - Room
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - BeholderProjectile
   - Player
   - Enemy
-  - 
+  - HealthLightingLayer
   - 
   - 
   - 
