@@ -23,7 +23,7 @@ TagManager:
   - BeholderProjectile
   - Player
   - Enemy
-  - HealthLightingLayer
+  - HealthShieldUI
   - 
   - 
   - 
