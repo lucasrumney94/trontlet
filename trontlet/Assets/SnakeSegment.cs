@@ -10,7 +10,7 @@ public class SnakeSegment : MonoBehaviour {
 	public SnakeSegment Leader;
 	public List<SnakeSegment> FollowingSegments;
 	public Vector3 lastPosition;
-	public bool head;
+	
 
 	private GameObject player;
 
@@ -22,6 +22,7 @@ public class SnakeSegment : MonoBehaviour {
 		{	
 			Leader = this.gameObject.GetComponent<SnakeSegment>();
 		}
+		StartCoroutine("MoveTowardsPlayer");
 	}
 	 
 	// Update is called once per frame
@@ -32,22 +33,47 @@ public class SnakeSegment : MonoBehaviour {
 
 	IEnumerator MoveTowardsPlayer()
 	{
-		lastPosition = transform.position;
-
-		if (Leader == this.gameObject)
+		for (;;)
 		{
-			// get player location
-			// calculate the move to make
-			// make the move
+			//Debug.Log("SSSSSSSSS!");
+			lastPosition = transform.position;
+			if (Leader == null)
+			{	
+				Leader = this.gameObject.GetComponent<SnakeSegment>();
+			}
 
-		}
-		else
-		{
-			// get leader location
-			// move to where the leader was
-			transform.position = Leader.lastPosition;
 
+			if (Leader == this.gameObject.GetComponent<SnakeSegment>())
+			{
+				// get player location
+				Vector3 MovementVector = new Vector3 (player.transform.position.x - transform.position.x, 0, player.transform.position.z - transform.position.z );
+				Debug.Log(MovementVector);
+
+				// calculate the move to make
+				if (MovementVector.x==MovementVector.z)
+				{
+					MovementVector = new Vector3 (Mathf.Sign(MovementVector.x)*gridSize, 0, 0);
+				}
+				else if (Mathf.Max(MovementVector.x, MovementVector.z) == MovementVector.x)
+				{
+					MovementVector = new Vector3 (Mathf.Sign(MovementVector.x)*gridSize, 0, 0);
+				}
+				else 
+				{
+					MovementVector = new Vector3 (0, 0, Mathf.Sign(MovementVector.z)*gridSize);
+				}
+
+				// make the move
+				transform.position += MovementVector;
+			}
+			else
+			{
+				// get leader location
+				// move to where the leader was
+				transform.position = Leader.lastPosition;
+
+			}
+			yield return new WaitForSeconds(MoveTickTime);
 		}
-		yield return new WaitForSeconds(MoveTickTime);
 	}
 }
