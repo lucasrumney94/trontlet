@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - BeholderProjectile
   - Room
+  - SnakeSegment
   layers:
   - Default
   - TransparentFX

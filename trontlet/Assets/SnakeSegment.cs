@@ -18,10 +18,21 @@ public class SnakeSegment : MonoBehaviour {
 
 	private GameObject player;
 
+	private List<Vector3> directions;
+	private List<Vector3> valid_directions;
+	private Ray MovementRay;
+	private RaycastHit objectHit;
+
 	// Use this for initialization
 	void Start () 
 	{
-		// lastPosition = transform.position;
+		directions = new List<Vector3>();
+		directions.Add(new Vector3(gridSize,0,0));
+		directions.Add(new Vector3(-gridSize,0,0));
+		directions.Add(new Vector3(0,0,gridSize));
+		directions.Add(new Vector3(0,0,-gridSize));
+
+		valid_directions = new List<Vector3>();
 
 		player = GameObject.FindGameObjectWithTag("Player");
 		if (Leader == null)
@@ -51,53 +62,69 @@ public class SnakeSegment : MonoBehaviour {
 			{
 				// get player location
 				Vector3 MovementVector = new Vector3 (player.transform.position.x - transform.position.x, 0, player.transform.position.z - transform.position.z );
-				// Debug.Log(MovementVector);
-
-				//If the distance to the player is smaller than one gridSize, lock in direction for 4 ticks to overshoot 'through' player
-				if (MovementVector.sqrMagnitude < Mathf.Pow(gridSize, 2))
+				// Calculate the preferred Square to move to (Towards the Player)
+				// If Snake doesn't care or wants to move along X, move along X
+				if  ((MovementVector.x==MovementVector.z) || (Mathf.Max(Mathf.Abs(MovementVector.x), Mathf.Abs(MovementVector.z)) == Mathf.Abs(MovementVector.x)))
 				{
-					persistDirection = new Vector3 (Mathf.Sign(MovementVector.x)*gridSize, 0, 0);
-					persist = true;
+					MovementVector = new Vector3 (Mathf.Sign(MovementVector.x)*gridSize, 0, 0);
 				}
-				if (persist)
+				else 
 				{
-					// If the snake is persisting in a given direction				
-					
-					transform.position += persistDirection;
-					
-					persistCounter++;
-
-					if (persistCounter == persistDirectionTicks)
-					{
-						persistCounter = 0;
-						persist = false;
-					}
+					MovementVector = new Vector3 (0, 0, Mathf.Sign(MovementVector.z)*gridSize);
+				}
+				// Is this direction available to move to?
+				MovementRay = new Ray(transform.position,MovementVector);
+				
+				Physics.Raycast(MovementRay, out objectHit, gridSize);
+				if (objectHit.collider==null)
+				{ 
+					// If hit nothing, Move
+					transform.position += MovementVector;
+				}
+				else if(!objectHit.transform.CompareTag("SnakeSegment"))
+				{
+					// If didn't hit snake segment, Move
+					transform.position += MovementVector;
 				}
 				else
 				{
-					//The snake is not persisting a direction, and should move toward the player 
+					// Forget previous valid directions
+					valid_directions.Clear();
+					
+					// Find all valid directions
+					foreach (Vector3 direction in directions)
+					{
+						MovementRay = new Ray(transform.position, direction);
+						Physics.Raycast(MovementRay, out objectHit, gridSize);
+						if (objectHit.collider==null)
+						{
+							valid_directions.Add(direction);
+						}
+						else if (!objectHit.transform.CompareTag("SnakeSegment"))
+						{
+							valid_directions.Add(direction);
+						}
 
-					// calculate the move to make
-					if (MovementVector.x==MovementVector.z)
-					{
-						// Debug.Log("Could Move Either Way, Move Along X Axis!");
-						MovementVector = new Vector3 (Mathf.Sign(MovementVector.x)*gridSize, 0, 0);
 					}
-					else if (Mathf.Max(Mathf.Abs(MovementVector.x), Mathf.Abs(MovementVector.z)) == Mathf.Abs(MovementVector.x))
+
+
+					// If no valid direction (must be due to other snake), do not move
+					if (valid_directions.Count == 0)
 					{
-						// Debug.Log("Move Along X Axis!");
-						MovementVector = new Vector3 (Mathf.Sign(MovementVector.x)*gridSize, 0, 0);
+						Debug.Log("Didn't Move!");
+						MovementVector = Vector3.zero;
 					}
 					else 
 					{
-						// Debug.Log("Move Along Z Axis!");
-						MovementVector = new Vector3 (0, 0, Mathf.Sign(MovementVector.z)*gridSize);
+						// If a valid direction exists, choose a random valid direction
+						Debug.Log("Chose a random Direction!");
+						Debug.Log(valid_directions.ToString());
+						MovementVector = valid_directions[Random.Range(0,valid_directions.Count)];
 					}
 
-					// make the move
-					transform.position += MovementVector;
+					// Finally Move along that random valid direction or move 0 if no valid direction exists
+					transform.position += MovementVector;	
 				}
-				
 			}
 			else
 			{
@@ -105,7 +132,6 @@ public class SnakeSegment : MonoBehaviour {
 				// move to where the leader was
 				// Debug.Log("Following Leader");
 				transform.position = Leader.gameObject.transform.position;
-
 			}
 			yield return new WaitForSeconds(MoveTickTime);
 		}
