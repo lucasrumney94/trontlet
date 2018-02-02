@@ -41,13 +41,11 @@ public class SnakeSegment : MonoBehaviour {
 	{
 		for (;;)
 		{
-			//Debug.Log("SSSSSSSSS!");
-			// lastPosition = transform.position;
+
 			if (Leader == null)
 			{	
 				Leader = this.gameObject.GetComponent<SnakeSegment>();
 			}
-
 
 			if (Leader == this.gameObject.GetComponent<SnakeSegment>())
 			{
